@@ -10,7 +10,7 @@ export default defineConfig({
   fonts: [
     {
       provider: fontProviders.local(),
-      name: "FiraCode-Bold",
+      name: "Fira Code",
       cssVariable: "--font-firaCode",
       options: {
         variants: [
@@ -36,7 +36,7 @@ export default defineConfig({
           {
             src: ["./src/assets/fonts/Inter-VariableFont_opsz,wght.ttf"],
             style: "normal",
-            weight: "normal",
+            weight: "100 900",
           },
         ],
       },
