@@ -1,6 +1,12 @@
 @import "tailwindcss";
 
 @theme {
-    --font-title: var(--font-firaCode);
-    --font-body: var(--font-inter);
+  --font-display: var(--font-firaCode);
+  --font-body: var(--font-inter);
+  --animate-carousel: carousel 20s linear infinite;
+}
+
+@keyframes carousel {
+  0% {transform: translateX(0);}
+  100% {transform: translateX(-50%);}
 }
