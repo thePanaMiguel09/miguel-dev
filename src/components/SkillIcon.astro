@@ -1,0 +1,13 @@
+---
+interface Props {
+  iconName: string;
+  colored: boolean;
+}
+
+const { iconName, colored } = Astro.props;
+const classIconName: string = `${iconName} ${colored ? "colored" : ""}`;
+---
+
+<li>
+  <i class={`${classIconName} text-5xl text-white`}></i>
+</li>
