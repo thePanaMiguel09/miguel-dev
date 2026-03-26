@@ -2,12 +2,13 @@
 interface Props {
   iconName: string;
   colored: boolean;
+  shadowColor: string;
 }
 
-const { iconName, colored } = Astro.props;
+const { iconName, colored, shadowColor } = Astro.props;
 const classIconName: string = `${iconName} ${colored ? "colored" : ""}`;
 ---
 
-<li>
+<li class=`transition-all duration-300 ${shadowColor} hover:cursor-pointer`>
   <i class={`${classIconName} text-5xl text-white`}></i>
 </li>
