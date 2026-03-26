@@ -1,25 +1,26 @@
 ---
 interface Props {
-    pathname: string;
+  pathname: string;
 }
 
-const {pathname} = Astro.props
+const { pathname } = Astro.props;
 
-console.log('Hola'+pathname);
-
+console.log(pathname);
 ---
 
-
-
-
 <nav
-  class="fixed flex w-full justify-end h-[10%] border-b border-gray-600 bg-transparent backdrop-blur-md"
+  class="hidden sm:fixed sm:flex sm:w-full sm:justify-end sm:h-[10%] sm:border-b sm:border-gray-600 sm:bg-transparent sm:backdrop-blur-md"
 >
   <div class="w-[50%] flex justify-evenly items-center">
-    <a href="#inicio" class="nav-link font-display text-2xl text-white">Inicio</a>
-    <a href="#skills" class="nav-link font-display text-2xl text-white">Skills</a>
-    <a href="" class="nav-link font-display text-2xl text-white">Proyectos</a>
-    <a href="" class="nav-link font-display text-2xl text-white">Contact</a>
+    <a href="#inicio" class="nav-link font-display text-2xl text-white"
+      >Inicio</a
+    >
+    <a href="#skills" class="nav-link font-display text-2xl text-white"
+      >Skills</a
+    >
+    <a href="#projects" class="nav-link font-display text-2xl text-white"
+      >Proyectos</a
+    >
   </div>
 </nav>
 
