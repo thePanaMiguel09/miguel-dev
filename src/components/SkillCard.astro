@@ -21,7 +21,7 @@ const { cardTitle, skills } = Astro.props;
       skills.map((skill) => (
         <li class="flex items-center gap-2 text-gray-300">
           {skill.icon && <i class={skill.icon} />}
-          <span>{skill.name}</span>
+          <span class="font-body text-lg">{skill.name}</span>
         </li>
       ))
     }
