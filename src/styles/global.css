@@ -4,9 +4,60 @@
   --font-display: var(--font-firaCode);
   --font-body: var(--font-inter);
   --animate-carousel: carousel 20s linear infinite;
+  --animate-typewriter: typewriter 3s steps(40) forwards;
+  --animate-blink: blink 1s step-end infinite;
 }
 
+body {
+  font-size: 14px;
+}
+
+h1 { font-size: 1.875rem; } /* 30px - mobile */
+h2 { font-size: 1.5rem;   } /* 24px - mobile */
+h3 { font-size: 1.25rem;  } /* 20px - mobile */
+p  { font-size: 0.875rem; } /* 14px - mobile */
+
+@media (min-width: 768px) {
+  body { font-size: 16px;   }
+  h1   { font-size: 3rem;   } /* 48px - tablet */
+  h2   { font-size: 1.875rem; } /* 30px - tablet */
+  h3   { font-size: 1.5rem; }   /* 24px - tablet */
+  p    { font-size: 1rem;   }   /* 16px - tablet */
+}
+
+@media (min-width: 1024px) {
+  h1 { font-size: 4.5rem;  } /* 72px - desktop */
+  h2 { font-size: 2.25rem; } /* 36px - desktop */
+  h3 { font-size: 1.875rem; } /* 30px - desktop */
+  p  { font-size: 1.125rem; } /* 18px - desktop */
+}
+
+
 @keyframes carousel {
-  0% {transform: translateX(0);}
-  100% {transform: translateX(-50%);}
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes typewriter {
+  0%,
+  100% {
+    transform: scaleX(0);
+  }
+  50% {
+    border-right-color: white;
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    border-right-color: transparent;
+  }
+  50% {
+    border-right-color: black;
+  }
 }
