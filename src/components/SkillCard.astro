@@ -1,0 +1,29 @@
+---
+interface SkillCardItem {
+  name: string;
+  icon?: string;
+}
+
+interface Props {
+  cardTitle: string;
+  skills: SkillCardItem[];
+}
+
+const { cardTitle, skills } = Astro.props;
+---
+
+<article
+  class="w-full h-full flex flex-col gap-4 p-6 rounded-xl border border-gray-700 bg-white/5"
+>
+  <h3 class="font-display text-white text-xl">{cardTitle}</h3>
+  <ul class="flex flex-wrap gap-3">
+    {
+      skills.map((skill) => (
+        <li class="flex items-center gap-2 text-gray-300">
+          {skill.icon && <i class={skill.icon} />}
+          <span>{skill.name}</span>
+        </li>
+      ))
+    }
+  </ul>
+</article>
