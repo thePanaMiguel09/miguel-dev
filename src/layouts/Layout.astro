@@ -23,6 +23,14 @@ import { Font } from "astro:assets";
   </head>
   <body>
     <slot />
+    <button
+      class="fixed bottom-6 right-6 w-14 h-14 rounded-full bg-white text-black flex items-center justify-center shadow-lg hover:scale-110 transition-transform duration-200 z-50"
+    >
+      <a
+        href="https://www.linkedin.com/in/miguel-%C3%A1ngel-ch%C3%A1vez-barrera-0b9b40304?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+        ><i class="devicon-linkedin-plain colored text-4xl"></i></a
+      >
+    </button>
   </body>
 </html>
 
@@ -30,6 +38,8 @@ import { Font } from "astro:assets";
   html,
   body {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     width: 100dvw;
     height: 200%;
     background-color: black;
