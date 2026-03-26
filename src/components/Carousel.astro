@@ -1,0 +1,55 @@
+---
+import { Image } from "astro:assets";
+
+const imageModules = import.meta.glob("/src/assets/images/projects/*.png", {
+  eager: true,
+}) as Record<string, { default: ImageMetadata }>;
+
+const images = Object.values(imageModules).map((mod) => mod.default);
+---
+
+<div
+  class="relative w-[70%] h-[50%] border border-gray-800 rounded-2xl overflow-hidden"
+>
+  <div
+    id="carousel-track"
+    class="flex h-full transition-transform duration-500 ease-in-out"
+  >
+    {
+      images.map((img) => (
+        <div class="min-w-full h-full">
+          <Image
+            src={img}
+            alt="Project screenshot"
+            class="w-full h-full object-cover"
+          />
+        </div>
+      ))
+    }
+  </div>
+
+  <button id="prev" class="absolute left-3 top-1/2 -translate-y-1/2 ..."
+    >&#8592;</button
+  >
+  <button id="next" class="absolute right-3 top-1/2 -translate-y-1/2 ..."
+    >&#8594;</button
+  >
+</div>
+
+<script>
+  const track = document.getElementById("carousel-track") as HTMLElement;
+  const total = track.children.length;
+  let current = 0;
+
+  function goTo(index: number) {
+    current = (index + total) % total;
+    track.style.transform = `translateX(-${current * 100}%)`;
+  }
+
+  document
+    .getElementById("prev")!
+    .addEventListener("click", () => goTo(current - 1));
+  document
+    .getElementById("next")!
+    .addEventListener("click", () => goTo(current + 1));
+</script>
