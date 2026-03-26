@@ -1,0 +1,45 @@
+---
+interface Props {
+    pathname: string;
+}
+
+const {pathname} = Astro.props
+
+console.log('Hola'+pathname);
+
+---
+
+
+
+
+<nav
+  class="fixed flex w-full justify-end h-[10%] border-b border-gray-600 bg-transparent backdrop-blur-md"
+>
+  <div class="w-[50%] flex justify-evenly items-center">
+    <a href="#inicio" class="nav-link font-display text-2xl text-white">Inicio</a>
+    <a href="#skills" class="nav-link font-display text-2xl text-white">Skills</a>
+    <a href="" class="nav-link font-display text-2xl text-white">Proyectos</a>
+    <a href="" class="nav-link font-display text-2xl text-white">Contact</a>
+  </div>
+</nav>
+
+<style>
+  .nav-link {
+    position: relative;
+  }
+
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.2s ease;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
+</style>
